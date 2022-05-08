@@ -11,14 +11,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  scan:
-    name: Fossa
+  fossa-scan:
+    name: Fossa Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
         
       - name: FOSSA analysis
-        uses: fossas/fossa-action@v1
+        uses: fossas/fossa-action@main
         with:
           api-key:  ${{ secrets.FOSSA_API_KEY }}
