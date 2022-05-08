@@ -3,6 +3,10 @@ name: 'Close Stale Issues and PRs'
 on:
   schedule:
     - cron: '0 0 * * *'
+    
+permissions:
+  issues: write
+  pull-requests: write    
 
 jobs:
   stale:
@@ -12,6 +16,7 @@ jobs:
       - uses: actions/stale@v5
         id: stale
         with:
+          # general
           repo-token: ${{ github.token }}
           remove-stale-when-updated: 'True'
           operations-per-run: 500
