@@ -13,7 +13,7 @@ jobs:
     name: Stale
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v5
+      - uses: actions/stale@v7
         id: stale
         with:
           # general
